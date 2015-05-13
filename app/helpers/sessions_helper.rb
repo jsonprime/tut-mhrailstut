@@ -2,7 +2,9 @@ module SessionsHelper
 
 	# Logs  in the given user
 	def log_in(user)
-		session[:user_id] = user.id
+		if user != nil
+			session[:user_id] = user.id
+		end
 	end
 
 	# Returns the current logged-in user (if any).
